@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" ng-app="phonecatApp">
+<head>
+	<meta charset="utf-8">
+	<title>O.o</title>
+	<link rel="stylesheet" href="css/bootstrap.css" />
+	<script src="js/jquery-3.1.0.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/angular.js"></script>
+	<script src="js/angular-ui-router.js"></script>
+	<script src="app/app.module.js"></script>
+	<script src="app/app.config.js"></script>
+	<script src="app/phone-list/phone-list.module.js"></script>
+	<script src="app/phone-list/phone-list.component.js"></script>
+</head>
+
+<body>
+	<!-- <phone-list></phone-list>  -->
+	<a ui-sref="home" ui-sref-active="active">Home</a>
+    <a ui-sref="about">About</a>
+
+    <ui-view></ui-view>
+</body>
+</html>

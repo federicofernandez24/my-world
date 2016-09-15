@@ -2,12 +2,13 @@
  * 
  */
 
-angular.module('phonecatApp').config(function($stateProvider) {
+angular.module('myWorldApp').config(function($stateProvider) {
   var helloState = {
     name: 'home',
     url: '/home',
     templateUrl: 'app/home/home.template.html',
-    controller: ''
+    controller: 'HomeController',
+    controllerAs: 'home'
   }
 
   var aboutState = {

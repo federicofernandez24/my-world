@@ -10,9 +10,11 @@
 buildscript {
     repositories {
         mavenCentral()
+        maven { url "https://repository.jboss.org/nexus/content/repositories/releases" }
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE")
+        classpath("io.spring.gradle:dependency-management-plugin:0.4.0.RELEASE")
     }
 }
 
@@ -20,6 +22,13 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
+apply plugin: "io.spring.dependency-management"
+
+dependencyManagement {
+  imports {
+    mavenBom 'org.springframework.data:spring-data-releasetrain:Hopper-SR2'
+  }
+}
 
 jar {
     baseName = 'gs-rest-service'
@@ -35,4 +44,7 @@ targetCompatibility = 1.8
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
+    compile 'org.springframework.data:spring-data-jpa'
+	compile 'org.springframework.data:spring-data-rest-webmvc:2.5.2.RELEASE'
+	compile 'org.hibernate:hibernate-core:5.2.2.Final'
 }
